@@ -14,13 +14,13 @@ namespace Tupiniquim.ConsoleApp
             string comandoTemp;
             while (true) {
                 Console.WriteLine("Digite o valor máximo da coordenada X : ");
-                if (!int.TryParse(Console.ReadLine(), out xLimit)) {
-                    Console.WriteLine("Caracter inválido !!! \n\tDigite apenas números Inteiros!!!");
+                if (!int.TryParse(Console.ReadLine(), out xLimit) || xLimit < 0) {
+                    Console.WriteLine("Caracter inválido !!! \n\tDigite apenas números Inteiros Maiores que Zero!!!");
                     continue;
                 }
                 Console.WriteLine("Digite o valor máximo da coordenada Y : ");
-                if (!int.TryParse(Console.ReadLine(), out yLimit)) {
-                    Console.WriteLine("Caracter inválido !!! \n\tDigite apenas números Inteiros!!!");
+                if (!int.TryParse(Console.ReadLine(), out yLimit) || yLimit < 0) {
+                    Console.WriteLine("Caracter inválido !!! \n\tDigite apenas números Inteiros Maiores que Zero!!!");
                     continue;
                 }
                 break;
@@ -57,7 +57,7 @@ namespace Tupiniquim.ConsoleApp
                         else
                             direcaoAtual++;
                     }
-                    else if (c == 'M') {
+                    else {
                         if (direcoes[direcaoAtual] == "N") {
                             if (yCoor < yLimit)
                                 yCoor++;
