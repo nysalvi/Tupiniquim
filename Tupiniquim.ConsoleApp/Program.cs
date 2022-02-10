@@ -29,8 +29,8 @@ namespace Tupiniquim.ConsoleApp
                 Console.WriteLine("Digite a posição inicial e direção do robô : ");
                 comandoTemp = Console.ReadLine();
                 if (!Regex.IsMatch(comandoTemp, @"^[0-9] [0-9] (O|N|S|L)$")) {
-                    Console.WriteLine("Erro!!!\nVocê digitar seguindo o padrão :\n\t1 - Um número\n\t2 - Um espaço" +
-                        "\n\t3 - Um número\n\t4 - Um espaço\n\t5 - O ou N ou L ou S");
+                    Console.WriteLine("Erro!!!\nVocê deve digitar seguindo o padrão :\n\t1 - Um número(positivo)" +
+                        "\n\t2 - Um espaço\n\t3 - Um número(positivo)\n\t4 - Um espaço\n\t5 - O ou N ou L ou S");
                     continue;
                 }
                 comandos = comandoTemp.Split(' ');
@@ -76,7 +76,7 @@ namespace Tupiniquim.ConsoleApp
                         }
                     }
                 }
-                Console.WriteLine("x : " + xCoor + "\ny : " + yCoor + "\nDireção : " + direcoes[direcaoAtual]);
+                Console.WriteLine("x : {0}\ny : {1}\nDireção : {2}", xCoor, yCoor, direcoes[direcaoAtual]);
                 Console.WriteLine("Deseja continuar ?\n\tPressione 'N' para sair");
                 if (Console.ReadLine() == "N")
                     break;                
